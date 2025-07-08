@@ -1,0 +1,62 @@
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+bin/
+develop-eggs/
+.installed.cfg
+pip-log.txt
+pip-delete-this-directory.txt
+.pydevproject
+.env
+.venv
+env/
+venv/
+ENV/
+
+# testing folder
+testing/
+a_testing/
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+
+# SQLite (for local development DB)
+*.db
+*.sqlite3
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Documentation
+docs/_build/
+*.md
+
+# Coverage reports
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+
+# Type hints
+typings/
+
+# pytest cache
+.pytest_cache/
+
+# macOS/Linux temp files
+.DS_Store
+Thumbs.db
+
+# Config files (if sensitive)
+config/local_config.py
