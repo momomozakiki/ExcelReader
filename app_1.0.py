@@ -71,17 +71,47 @@ def get_file_name(file_path):
     return file_stem
 
 
-def scan_excel_with_pandas(file_path, keywords):
+import pandas as pd
+from openpyxl.utils import column_index_from_string
+
+
+def scan_excel_with_pandas(file_path, keywords, start_col=0, end_col=19, start_row=0, end_row=58):
+    """
+    Scans a specified range in an Excel file for cells containing any of the given keywords.
+
+    Parameters:
+        file_path (str): Path to the Excel file
+        keywords (list): List of keywords to search for
+        start_col (int or str): Starting column (e.g., 0 or 'A')
+        end_col (int or str): Ending column (e.g., 19 or 'T')
+        start_row (int): Starting row (0-based)
+        end_row (int): Ending row (0-based)
+
+    Returns:
+        dict: Dictionary of matching cells in format {"A1": {"Product :": "Scale"}, ...}
+    """
+
+    # Convert column letters to numeric index if needed (e.g., 'A' -> 0)
+    if isinstance(start_col, str):
+        start_col = column_index_from_string(start_col) - 1  # 'A' -> 0
+
+    if isinstance(end_col, str):
+        end_col = column_index_from_string(end_col) - 1  # 'T' -> 19
+
     # Load the Excel file into a DataFrame
     df = pd.read_excel(file_path, header=None)
-    # print(keywords)
 
     result = {}
-    print(df)
-    # Loop through each cell in the DataFrame
+
+    # Loop through each cell in the defined range
     for row_idx, row in df.iterrows():
-        # print(row_idx, row)
-        for col_idx, value in row.items():
+        if not (start_row <= row_idx < end_row):
+            continue  # Skip out-of-range rows
+
+        for col_idx, value in enumerate(row):
+            if not (start_col <= col_idx <= end_col):
+                continue  # Skip out-of-range columns
+
             cell_value = str(value).strip() if pd.notna(value) else ""
             if not cell_value:
                 continue
@@ -92,15 +122,14 @@ def scan_excel_with_pandas(file_path, keywords):
             ]
 
             if matched_keywords:
-                column_letter = chr(65 + col_idx)  # Convert 0 -> A, 1 -> B etc.
-                cell_address = f"{column_letter}{row_idx + 1}"  # Rows are 0-based in pandas
+                column_letter = chr(65 + col_idx)  # 0 -> A, 1 -> B, etc.
+                cell_address = f"{column_letter}{row_idx + 1}"  # Excel-style row number
 
                 result[cell_address] = {
                     keyword: cell_value for keyword in matched_keywords
                 }
 
     return result
-
 
 
 # --- Main Execution ---
