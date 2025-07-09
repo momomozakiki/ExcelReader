@@ -21,7 +21,7 @@ def content_boundaries(content_name, start_keywords, end_keywords, file_path):
         file_path (str): Path to the Excel file
 
     Returns:
-        tuple: (content_name, start_row, end_row)
+        tuple: (content_name, start_row, end_row)git
 
     Raises:
         ValueError: If any keyword is not found or invalid order
