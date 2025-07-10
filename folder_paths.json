@@ -1,0 +1,14 @@
+{
+    "Folders": {
+        "Apps": "\\\\192.168.0.105\\Apps",
+        "SIM": "\\\\192.168.0.105\\Service\\Quotation\\SIM",
+        "Sales": "\\\\192.168.0.105\\Sales Doc",
+        "Scan": "\\\\192.168.0.105\\Scan",
+        "Service": "\\\\192.168.0.105\\Service",
+        "Winston": "\\\\192.168.0.105\\Service\\Quotation\\Winston",
+        "test": "C:/Users/ST-Service/Desktop/SIM/Excel Reader",
+        "Json": "C:/Users/ST-Service/Desktop/SIM/Excel Reader/Json"
+    },
+    "Default_Open": "SIM",
+    "Default_Save": "test"
+}
