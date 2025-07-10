@@ -1,0 +1,20 @@
+{
+    "Open_Folder": {
+        "Apps": "\\\\192.168.0.105\\Apps",
+        "SIM": "\\\\192.168.0.105\\Service\\Quotation\\SIM",
+        "Sales": "\\\\192.168.0.105\\Sales Doc",
+        "Scan": "\\\\192.168.0.105\\Scan",
+        "Service": "\\\\192.168.0.105\\Service",
+        "Winston": "\\\\192.168.0.105\\Service\\Quotation\\Winston"
+    },
+    "Save_Folder": {
+        "Sales": "\\\\192.168.0.105\\Sales Doc",
+        "Service": "\\\\192.168.0.105\\Service",
+        "Scan": "\\\\192.168.0.105\\Scan",
+        "Apps": "\\\\192.168.0.105\\Apps",
+        "SIM": "\\\\192.168.0.105\\Service\\Quotation\\SIM",
+        "Winston": "\\\\192.168.0.105\\Service\\Quotation\\Winston"
+    },
+    "Default_Open": "SIM",
+    "Default_Save": "Sales"
+}
