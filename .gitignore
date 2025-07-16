@@ -42,6 +42,9 @@ a_testing/
 docs/_build/
 *.md
 
+# Exclude README.md in git .ignore
+!README.md
+
 # Coverage reports
 .coverage
 coverage.xml
