@@ -456,7 +456,7 @@ class KeywordSearchApp(QWidget):
         preview_action = menu.addAction("Preview")
         export_json_action = menu.addAction("Export to JSON")
 
-        action = menu.exec_(self.result_list.mapToGlobal(self.result_list.pos()))
+        action = menu.exec(self.result_list.mapToGlobal(self.result_list.pos()))
 
         if action == open_action:
             self.open_file(file_name)
